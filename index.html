@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>사-자-서로 보는 운명</title>
+  <meta name="description" content="사주, 자미두수, 서양점성술 세 가지로 함께 보는 나의 성향과 앞으로의 흐름, 그리고 두 사람의 궁합." />
+  <meta property="og:title" content="사-자-서로 보는 운명" />
+  <meta property="og:description" content="사주 · 자미두수 · 서양점성술, 세 체계가 겹치는 곳만 읽습니다." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#fbfaf7" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23fbfaf7'/%3E%3Ctext x='32' y='42' font-size='26' text-anchor='middle' font-family='sans-serif' font-weight='700' fill='%233a4a8c'%3E사자서%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <script type="module" crossorigin src="./assets/index-MNsYwBqr.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BIyUgePh.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">사-자-서<span>로 보는 운명</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>사주, 자미두수, 점성술.<br />세 가지로 함께 봅니다.</h1>
+      <p class="lead">한 가지로만 보면 우연일 수 있어요. 세 체계가 같은 얘기를 할 때만 그걸 당신의 특징으로 봅니다.</p>
+    </section>
+
+    <section class="why">
+      <div class="why-item">
+        <span class="why-k">사</span>
+        <div><h3>사주</h3><p>태어난 해·달·날·시의 여덟 글자로 기질과 10년 단위 흐름을 봅니다.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="why-k">자</span>
+        <div><h3>자미두수</h3><p>12개 영역(나·배우자·돈·일·집…)별로 어디서 힘이 나는지 봅니다.</p></div>
+      </div>
+      <div class="why-item">
+        <span class="why-k">서</span>
+        <div><h3>서양점성술</h3><p>실제 행성 위치로 마음이 움직이는 방식과 관계의 결을 봅니다.</p></div>
+      </div>
+    </section>
+
+    <section id="start" class="section">
+      <form id="birth-form" class="card form" novalidate action="javascript:void 0" onsubmit="return false">
+        <h2>태어난 정보</h2>
+        <label class="field">
+          <span>이름 또는 닉네임 <em>선택</em></span>
+          <input name="name" type="text" maxlength="20" placeholder="예: 민지" autocomplete="nickname" />
+        </label>
+        <div class="grid2">
+          <label class="field">
+            <span>생년월일 (양력)</span>
+            <input name="date" type="date" min="1920-01-01" max="2026-12-31" required />
+          </label>
+          <div class="field">
+            <span>태어난 시각</span>
+            <div class="row">
+              <input name="time" type="time" value="12:00" />
+              <label class="check"><input name="unknownTime" type="checkbox" /> 모름</label>
+            </div>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <span>성별</span>
+            <div class="seg" role="radiogroup">
+              <label><input type="radio" name="gender" value="F" checked /><span>여</span></label>
+              <label><input type="radio" name="gender" value="M" /><span>남</span></label>
+            </div>
+          </div>
+          <label class="field">
+            <span>출생지</span>
+            <input name="city" type="text" list="city-list" value="서울" autocomplete="off" />
+            <datalist id="city-list"></datalist>
+          </label>
+        </div>
+        <small class="hint">시각을 모르면 자미두수와 점성술 상승궁은 계산되지 않아요. 출생지는 현재 국내만 지원합니다.</small>
+        <p class="form-error" id="form-error" role="alert"></p>
+        <button class="btn btn-block" type="submit">결과 보기</button>
+        <p class="fine center">입력한 정보는 이 기기 안에서만 계산되고, 어디에도 저장·전송되지 않아요.</p>
+      </form>
+    </section>
+
+    <section id="result" class="section" hidden></section>
+
+    <section id="compat-cta" class="section" hidden>
+      <div class="card cta">
+        <p class="eyebrow">궁합</p>
+        <h2>궁금한 사람이 있나요?</h2>
+        <p class="lead">연인, 배우자, 썸 타는 사람, 친구나 동료까지. 상대의 생년월일시를 넣으면 두 사람이 어디서 잘 맞고 어디서 부딪히는지, 함께 좋은 해는 언제인지 알려드려요.</p>
+        <button class="btn" id="compat-open" type="button">궁합 보기</button>
+        <form id="compat-form" class="form compat-form" novalidate action="javascript:void 0" onsubmit="return false" hidden>
+          <h3>상대의 태어난 정보</h3>
+          <div class="field">
+            <span>어떤 사이인가요?</span>
+            <div class="seg" role="radiogroup">
+              <label><input type="radio" name="mode" value="love" checked /><span>연인·배우자</span></label>
+              <label><input type="radio" name="mode" value="friend" /><span>친구·동료</span></label>
+            </div>
+          </div>
+          <label class="field">
+            <span>상대 이름 또는 닉네임 <em>선택</em></span>
+            <input name="name" type="text" maxlength="20" placeholder="예: 지훈" autocomplete="off" />
+          </label>
+          <div class="grid2">
+            <label class="field">
+              <span>생년월일 (양력)</span>
+              <input name="date" type="date" min="1920-01-01" max="2026-12-31" required />
+            </label>
+            <div class="field">
+              <span>태어난 시각</span>
+              <div class="row">
+                <input name="time" type="time" value="12:00" />
+                <label class="check"><input name="unknownTime" type="checkbox" /> 모름</label>
+              </div>
+            </div>
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <span>성별</span>
+              <div class="seg" role="radiogroup">
+                <label><input type="radio" name="gender" value="F" /><span>여</span></label>
+                <label><input type="radio" name="gender" value="M" checked /><span>남</span></label>
+              </div>
+            </div>
+            <label class="field">
+              <span>출생지</span>
+              <input name="city" type="text" list="city-list" value="서울" autocomplete="off" />
+            </label>
+          </div>
+          <p class="form-error" id="compat-error" role="alert"></p>
+          <button class="btn btn-block" type="submit">궁합 결과 보기</button>
+          <p class="fine center">상대의 정보도 이 기기 안에서만 계산되고, 어디에도 저장·전송되지 않아요.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="compat" class="section" hidden></section>
+  </main>
+
+  <footer class="footer">
+    <p>성향과 시기를 읽는 참고 자료이지, 정해진 운명은 아닙니다.</p>
+  </footer>
+
+</body>
+</html>
